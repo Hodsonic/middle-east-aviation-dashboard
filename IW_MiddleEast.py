@@ -17,7 +17,8 @@ AIRPORT_TO_COUNTRY = {
     "BEY": "LB", "MCT": "OM", "DOH": "QA", "JED": "SA", "RUH": "SA", 
     "DMM": "SA", "DAM": "SY", "IST": "TR", "ESB": "TR", "AYT": "TR", 
     "AUH": "AE", "DXB": "AE", "SHJ": "AE", "DWC": "AE", "AAN": "AE", 
-    "FJR": "AE", "ADE": "YE", "ISL": "TR", "SAW": "TR", "BJV": "TR"
+    "FJR": "AE", "ADE": "YE", "ISL": "TR", "SAW": "TR", "BJV": "TR",
+    "LCA": "CY"
 }
 
 AIRPORT_LOOKUP = {
@@ -28,7 +29,7 @@ AIRPORT_LOOKUP = {
     "DAM": "Damascus Intl", "IST": "Istanbul Airport", "ESB": "Ankara Esenboğa", "AYT": "Antalya",
     "AUH": "Abu Dhabi Intl", "DXB": "Dubai Intl", "SHJ": "Sharjah Intl", "DWC": "Al Maktoum",
     "AAN": "Al Ain Intl", "FJR": "Fujairah Intl", "ADE": "Aden Intl", "ISL": "Istanbul Atatürk",
-    "SAW": "Sabiha Gökçen", "BJV": "Milas-Bodrum"
+    "SAW": "Sabiha Gökçen", "BJV": "Milas-Bodrum","LCA": "Larnaca Intl"
 }
 
 # --- 2. DATA LOADING ---
