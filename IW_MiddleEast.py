@@ -72,22 +72,26 @@ df_master = load_data()
 
 # --- 3. FILTERS ---
 st.sidebar.header("Dashboard Filters")
+
+# Check if df_master was created successfully
+if df_master.empty:
+    st.error("No data found! Please ensure your Excel files are in the repository.")
+    st.stop()
+
+# Ensure required columns exist before filtering
+required_cols = ['Airport_Display', 'Policy Name']
+if not all(col in df_master.columns for col in required_cols):
+    st.error(f"Missing columns in data. Found: {list(df_master.columns)}")
+    st.stop()
+
 df_filtered = df_master.copy()
 
-# Fix: Convert to string to ensure sorting doesn't crash on mixed types
+# Airport Selection Filter
+# Use .get() or safer access to prevent KeyError
 unique_airports = [str(x) for x in df_filtered['Airport_Display'].unique() if x != 'In Flight']
 all_airports = sorted(unique_airports)
 
 selected_airports = st.sidebar.multiselect("Select Airports", options=all_airports)
-
-# Policy Filter: Also convert to string to be safe
-all_policies = sorted([str(x) for x in df_filtered['Policy Name'].fillna('None').unique()])
-policies = st.sidebar.multiselect("Select Policy Name", options=all_policies)
-
-if selected_airports:
-    df_filtered = df_filtered[df_filtered['Airport_Display'].astype(str).isin(selected_airports)]
-if policies:
-    df_filtered = df_filtered[df_filtered['Policy Name'].astype(str).isin(policies)]
 
 # --- 4. EXPOSURE TREND ---
 st.subheader("Exposure Trend Over Time")
