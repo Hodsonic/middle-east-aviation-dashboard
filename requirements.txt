@@ -1,0 +1,6 @@
+streamlit
+pandas
+plotly
+reverse_geocoder
+openpyxl
+geopy
